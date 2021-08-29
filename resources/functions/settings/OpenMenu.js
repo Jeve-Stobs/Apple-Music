@@ -296,12 +296,6 @@ exports.SettingsMenuInit = function () {
                   help: "Enabling this option allows you to see the song name in the tooltip on the taskbar when the application is minimized to the tray.",
                 },
                 {
-                  // LastFM
-                  heading: "LastFM Notice",
-                  content: `<p style="size='8px'">For information regarding this section, read the wiki post found <a style="color: #227bff !important" target="_blank" href='https://github.com/cryptofyre/Apple-Music/wiki/LastFM'>here</a>.</p>`,
-                  type: "message",
-                },
-                {
                   // LastFM Toggle
                   key: "lastfmEnabled",
                   type: "checkbox",

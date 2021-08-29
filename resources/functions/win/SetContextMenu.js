@@ -1,6 +1,5 @@
 const { app, Menu } = require("electron");
 const { Analytics } = require("../analytics/sentry");
-const { checkUpdates } = require("../update/update");
 Analytics.init();
 
 exports.SetContextMenu = function (visibility) {

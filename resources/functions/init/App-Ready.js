@@ -39,9 +39,6 @@ exports.ApplicationReady = function () {
     });
   }
 
-  // Init
-  const { checkUpdates } = require("../update/update");
-  checkUpdates();
 
   // Mpris
   app.mpris = {
