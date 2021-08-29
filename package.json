@@ -1,0 +1,81 @@
+{
+  "name": "apple-music-electron",
+  "applicationId": "AppleMusicElectron",
+  "productName": "Apple Music",
+  "version": "2.5.1",
+  "description": "A free, lightweight, open source alternative to iTunes and other Apple Music applications based on Electron 13.1.0",
+  "scripts": {
+    "init": "install",
+    "start": "electron --enable-accelerated-mjpeg-decode --enable-accelerated-video --disable-gpu-driver-bug-workarounds --ignore-gpu-blacklist --enable-native-gpu-memory-buffers .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "format": "prettier --write \"**/*.{js,jsx,css,html}\""
+  },
+  "dependencies": {
+    "@sentry/electron": "^2.5.2",
+    "discord-rpc": "^4.0.1",
+    "chmodr": "^1.2.0",
+    "electron-acrylic-window": "^0.5.8",
+    "electron-log": "^4.4.1",
+    "electron-preferences": "^2.4.1",
+    "electron-updater": "^4.3.9",
+    "fs-extra": "^10.0.0",
+    "is-reachable": "^5.0.0",
+    "lastfmapi": "^0.1.1",
+    "mpris-service": "^2.1.2",
+    "node-fetch": "^2.6.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "register-scheme": "github:devsnek/node-register-scheme",
+    "source-map-support": "^0.5.19",
+    "v8-compile-cache": "^2.3.0"
+  },
+  "devDependencies": {
+    "electron": "https://github.com/castlabs/electron-releases.git",
+    "electron-builder": "^22.11.7",
+    "electron-webpack": "^2.8.2",
+    "musickit-typescript": "^1.2.4",
+    "prettier": "^2.3.2",
+    "webpack": "~5.51.1"
+  },
+  "build": {
+    "electronVersion": "13.1.5",
+    "electronDownload": {
+      "version": "14.0.0-wvvmp-beta.23",
+      "mirror": "https://github.com/castlabs/electron-releases/releases/download/v"
+    },
+    "appId": "apple-music",
+    "extends": null,
+    "files": [
+      "**/*",
+      "./resources/icons/icon.*"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "snap",
+        "rpm"
+      ],
+      "category": "AudioVideo",
+      "icon": "./resources/icons/icon.icns",
+      "desktop": "./resources/applemusic.desktop"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "./resources/icons/icon.ico"
+    },
+    "appx": {
+      "applicationId": "applemusicelectron",
+      "publisher": "CN=cryptofyre"
+    },
+    "mac": {
+      "icon": "./resources/icons/icon.icns",
+      "category": "public.app-category.music",
+      "darkModeSupport": true
+    }
+  }
+}
