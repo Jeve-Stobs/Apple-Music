@@ -5,7 +5,7 @@ exports.Analytics = {
   init: function () {
     if (app.preferences.value("general.analyticsEnabled").includes(true)) {
       ElectronSentry.init({
-        dsn: "https://20e1c34b19d54dfcb8231e3ef7975240@o954055.ingest.sentry.io/5903033",
+        dsn: "https://97b36dfbc44040caac26012e32d3da01@o615014.ingest.sentry.io/5936255",
       });
     }
   },
