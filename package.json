@@ -3,8 +3,7 @@
   "productName": "Apple Music",
   "version": "2.5.1",
   "description": "A free, lightweight, open source alternative to iTunes and other Apple Music applications based on Electron ",
-  "url": "https://github.com/Jeve-Stobs/Apple-Music/issues",
-  "email": "sam@jevestobs.dev",
+  "author": "Jeve Stobs <sam@jevestobs.dev> (https://jevestobs.dev)",
   "scripts": {
     "init": "install",
     "start": "electron --enable-accelerated-mjpeg-decode --enable-accelerated-video --disable-gpu-driver-bug-workarounds --ignore-gpu-blacklist --enable-native-gpu-memory-buffers .",
