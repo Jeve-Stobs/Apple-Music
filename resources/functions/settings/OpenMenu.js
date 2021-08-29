@@ -298,7 +298,7 @@ exports.SettingsMenuInit = function () {
                 {
                   // LastFM
                   heading: "LastFM Notice",
-                  content: `<p style="size='8px'">For information regarding this section, read the wiki post found <a style="color: #227bff !important" target="_blank" href='https://github.com/cryptofyre/Apple-Music-Electron/wiki/LastFM'>here</a>.</p>`,
+                  content: `<p style="size='8px'">For information regarding this section, read the wiki post found <a style="color: #227bff !important" target="_blank" href='https://github.com/cryptofyre/Apple-Music/wiki/LastFM'>here</a>.</p>`,
                   type: "message",
                 },
                 {
@@ -386,7 +386,7 @@ exports.SettingsMenuInit = function () {
                 },
                 {
                   content:
-                    '<p>You can preview all the themes <a style="color: #227bff !important" target="_blank" href="https://github.com/cryptofyre/Apple-Music-Electron/wiki/Theme-Preview-Images">here</a>.</p>',
+                    '<p>You can preview all the themes <a style="color: #227bff !important" target="_blank" href="https://github.com/cryptofyre/Apple-Music/wiki/Theme-Preview-Images">here</a>.</p>',
                   type: "message",
                 },
                 {

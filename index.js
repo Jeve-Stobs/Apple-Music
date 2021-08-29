@@ -10,7 +10,7 @@ InitializeLogging();
 
 const { SettingsMenuInit } = require("./resources/functions/settings/OpenMenu");
 SettingsMenuInit();
-console.log("[Apple-Music-Electron] Current Configuration:");
+console.log("[Apple-Music] Current Configuration:");
 console.log(app.preferences._preferences);
 console.log(
   "---------------------------------------------------------------------"
@@ -28,13 +28,13 @@ function CreateWindow() {
   const ExistingInstance = InstanceHandler();
   if (ExistingInstance === true) {
     console.log(
-      "[Apple-Music-Electron] [InstanceHandler] Existing Instance Found. Terminating."
+      "[Apple-Music] [InstanceHandler] Existing Instance Found. Terminating."
     );
     app.quit();
     return;
   } else {
     console.log(
-      "[Apple-Music-Electron] [InstanceHandler] No existing instances found."
+      "[Apple-Music] [InstanceHandler] No existing instances found."
     );
   }
 
@@ -92,8 +92,8 @@ app.on("ready", () => {
 
   const { ApplicationReady } = require("./resources/functions/init/App-Ready");
   ApplicationReady();
-  console.log("[Apple-Music-Electron] Application is Ready.");
-  console.log("[Apple-Music-Electron] Creating Window...");
+  console.log("[Apple-Music] Application is Ready.");
+  console.log("[Apple-Music] Creating Window...");
   CreateWindow();
 });
 

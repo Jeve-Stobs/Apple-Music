@@ -16,7 +16,7 @@ exports.InitializeBase = function () {
   if (
     app.preferences.value("advanced.preventMediaKeyHijacking").includes(true)
   ) {
-    console.log("[Apple-Music-Electron] Hardware Media Key Handling disabled.");
+    console.log("[Apple-Music] Hardware Media Key Handling disabled.");
     app.commandLine.appendSwitch(
       "disable-features",
       "HardwareMediaKeyHandling,MediaSessionService"
@@ -40,7 +40,7 @@ exports.InitializeBase = function () {
   // Detects if the application has been opened with --force-quit
   if (app.commandLine.hasSwitch("force-quit")) {
     console.log(
-      "[Apple-Music-Electron] User has closed the application via --force-quit"
+      "[Apple-Music] User has closed the application via --force-quit"
     );
     app.quit();
   }
