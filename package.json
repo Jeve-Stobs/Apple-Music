@@ -36,7 +36,7 @@
     "electron-webpack": "^2.8.2",
     "musickit-typescript": "^1.2.4",
     "prettier": "^2.3.2",
-    "webpack": "~5.51.1"
+    "webpack": "^4.42.1"
   },
   "build": {
     "electronVersion": "13.1.5",
@@ -68,8 +68,8 @@
       "icon": "./resources/icons/icon.ico"
     },
     "appx": {
-      "applicationId": "applemusicelectron",
-      "publisher": "CN=cryptofyre"
+      "applicationId": "applemusic",
+      "publisher": "CN=jevestobs"
     },
     "mac": {
       "icon": "./resources/icons/icon.icns",
