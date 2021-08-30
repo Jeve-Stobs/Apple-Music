@@ -68,7 +68,7 @@ module.exports = {
       largeImageKey: "apple",
       largeImageText: attributes.albumName,
       smallImageKey: "play",
-      smallImageText: "Playing",
+      smallImageText: "playingicon",
       instance: true,
     };
 
@@ -108,7 +108,7 @@ module.exports = {
         delete ActivityObject.startTimestamp;
         delete ActivityObject.endTimestamp;
         ActivityObject.smallImageKey = "pause";
-        ActivityObject.smallImageText = "Paused";
+        ActivityObject.smallImageText = "pausedicon";
       }
     }
 
