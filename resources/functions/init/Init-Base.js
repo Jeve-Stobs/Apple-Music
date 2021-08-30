@@ -44,7 +44,12 @@ exports.InitializeBase = function () {
 		);
 		app.quit();
 	}
-
+	// Set the Protocols
+	app.setAsDefaultProtocolClient('ame'); // Custom AME Protocol
+	app.setAsDefaultProtocolClient('itms'); // iTunes HTTP
+	app.setAsDefaultProtocolClient('itmss'); // iTunes HTTPS
+	app.setAsDefaultProtocolClient('musics'); // macOS Client
+	app.setAsDefaultProtocolClient('music'); // macOS Client
 	// Set Max Listener
 	require('events').EventEmitter.defaultMaxListeners = Infinity;
 };
