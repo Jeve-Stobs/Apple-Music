@@ -84,8 +84,7 @@ exports.InitializeTheme = function () {
 					}
 				});
 			} else {
-				console.log('[InitializeTheme] Success');
-
+            console.log('[InitializeTheme] File is readable.');
 				// Save all the file names to array and log it
 				try {
 					app.themesList = fs.readdirSync(app.userThemesPath);
