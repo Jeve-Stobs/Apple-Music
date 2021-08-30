@@ -3,79 +3,79 @@
  */
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    /* accent colors */
-    --keyColor: #88c0d0 !important;
-    --keyColor-rgb: 136, 192, 208 !important;
-    --systemAccentBG: #88c0d0 !important;
-    --systemAccentBG-pressed: #81a1c1 !important;
+	:root {
+		/* accent colors */
+		--keyColor: #88c0d0 !important;
+		--keyColor-rgb: 136, 192, 208 !important;
+		--systemAccentBG: #88c0d0 !important;
+		--systemAccentBG-pressed: #81a1c1 !important;
 
-    /*everything else*/
-    --primaryColor: #88c0d0 !important;
-    --sidebar: #3b4252 !important;
-    --transparency: #3b425202 !important;
-    --footerBG: #434c5e !important;
-    --pageBG: #2e3440 !important;
-    --playerBackground: #3b4252 !important;
-    --playerLCDBGFill: #434c5e !important;
-    --playerVolumeIconFill: #88c0d0 !important;
-    --systemGreen: #a3be8c !important;
-    --systemRed: #bf616a !important;
-    --lovedBGColor: #b48ead !important;
-    --systemVibrantTextPrimary: #eceff4 !important;
-    --systemVibrantTextTertiary: #eceff4 !important;
-    --modalBGColor: #2e3440 !important;
-    --systemHeaderMaterialSover: #2e3440 !important;
-    --systemPrimary: #eceff4 !important;
-    --systemSecondary: #eceff4 !important;
-    --systemQuaternary: #434c5e !important;
-    --selectionColor: #88c0d0 !important;
-    --systemHeaderMaterialSoverIncreaseContrast: #2e3440 !important;
-    --segmentedControlSelectedBG: #434c5e !important;
-    --modalBGHeaderColor: #3b4252 !important;
-    --tracklistHoverColor: #434c5e !important;
-    --sidebarSelectedState: #434c5e !important;
-    --playerPlatterButtonBGFill: #88c0d0 !important;
-    --playerPlatterButtonIconFill: #eceff4 !important;
-    --primaryColor-rgb: transparent !important;
-    --playerVolumeFill: #88c0d0 !important;
-    --systemStandardThickMaterialSover: #3b4252 !important;
-    --systemSecondary-vibrantText: #d8dee9 !important;
-    --systemPrimary-vibrantText: #eceff4 !important;
-    --contextMenuBorderColor: #2e3440 !important;
-    --systemTertiary-vibrant: #2e3440 !important;
-  }
+		/*everything else*/
+		--primaryColor: #88c0d0 !important;
+		--sidebar: #3b4252 !important;
+		--transparency: #3b425202 !important;
+		--footerBG: #434c5e !important;
+		--pageBG: #2e3440 !important;
+		--playerBackground: #3b4252 !important;
+		--playerLCDBGFill: #434c5e !important;
+		--playerVolumeIconFill: #88c0d0 !important;
+		--systemGreen: #a3be8c !important;
+		--systemRed: #bf616a !important;
+		--lovedBGColor: #b48ead !important;
+		--systemVibrantTextPrimary: #eceff4 !important;
+		--systemVibrantTextTertiary: #eceff4 !important;
+		--modalBGColor: #2e3440 !important;
+		--systemHeaderMaterialSover: #2e3440 !important;
+		--systemPrimary: #eceff4 !important;
+		--systemSecondary: #eceff4 !important;
+		--systemQuaternary: #434c5e !important;
+		--selectionColor: #88c0d0 !important;
+		--systemHeaderMaterialSoverIncreaseContrast: #2e3440 !important;
+		--segmentedControlSelectedBG: #434c5e !important;
+		--modalBGHeaderColor: #3b4252 !important;
+		--tracklistHoverColor: #434c5e !important;
+		--sidebarSelectedState: #434c5e !important;
+		--playerPlatterButtonBGFill: #88c0d0 !important;
+		--playerPlatterButtonIconFill: #eceff4 !important;
+		--primaryColor-rgb: transparent !important;
+		--playerVolumeFill: #88c0d0 !important;
+		--systemStandardThickMaterialSover: #3b4252 !important;
+		--systemSecondary-vibrantText: #d8dee9 !important;
+		--systemPrimary-vibrantText: #eceff4 !important;
+		--contextMenuBorderColor: #2e3440 !important;
+		--systemTertiary-vibrant: #2e3440 !important;
+	}
 
-  body > div {
-    color: #eceff4 !important;
-  }
+	body > div {
+		color: #eceff4 !important;
+	}
 
-  .dt-search-box__input {
-    border-color: #88c0d0 !important;
-  }
+	.dt-search-box__input {
+		border-color: #88c0d0 !important;
+	}
 
-  .web-navigation__header-button:hover,
-  .web-navigation__header-text {
-    color: #eceff4 !important;
-    opacity: 1 !important;
-  }
+	.web-navigation__header-button:hover,
+	.web-navigation__header-text {
+		color: #eceff4 !important;
+		opacity: 1 !important;
+	}
 
-  .songs-list__col--heart-and-star {
-    background-color: transparent !important;
-  }
+	.songs-list__col--heart-and-star {
+		background-color: transparent !important;
+	}
 
-  .media-artwork-v2--error,
-  .media-artwork-v2--error,
-  .media-artwork-v2__image,
-  .media-artwork-v2--feature-recommended,
-  .media-artwork-v2--feature-recommended .media-artwork-v2__image,
-  .media-artwork-v2:not(.media-artwork-v2--downloaded),
-  .media-artwork-v2:not(.media-artwork-v2--downloaded)
-    .media-artwork-v2__image {
-    background-color: transparent !important;
-  }
+	.media-artwork-v2--error,
+	.media-artwork-v2--error,
+	.media-artwork-v2__image,
+	.media-artwork-v2--feature-recommended,
+	.media-artwork-v2--feature-recommended .media-artwork-v2__image,
+	.media-artwork-v2:not(.media-artwork-v2--downloaded),
+	.media-artwork-v2:not(.media-artwork-v2--downloaded)
+		.media-artwork-v2__image {
+		background-color: transparent !important;
+	}
 
-  ::placeholder {
-    color: #eceff4 !important;
-  }
+	::placeholder {
+		color: #eceff4 !important;
+	}
 }

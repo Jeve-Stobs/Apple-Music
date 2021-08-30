@@ -1,44 +1,44 @@
 try {
-  if (!preferences) {
-    var preferences = ipcRenderer.sendSync("getPreferences");
-  }
+	if (!preferences) {
+		var preferences = ipcRenderer.sendSync('getPreferences');
+	}
 
-  function GetXPath(path) {
-    return document.evaluate(
-      path,
-      document,
-      null,
-      XPathResult.FIRST_ORDERED_NODE_TYPE,
-      null
-    ).singleNodeValue;
-  }
+	function GetXPath(path) {
+		return document.evaluate(
+			path,
+			document,
+			null,
+			XPathResult.FIRST_ORDERED_NODE_TYPE,
+			null
+		).singleNodeValue;
+	}
 
-  /* Remove the Region Banner */
-  while (document.getElementsByClassName("locale-switcher-banner").length > 0) {
-    document.getElementsByClassName("locale-switcher-banner")[0].remove();
-  }
+	/* Remove the Region Banner */
+	while (document.getElementsByClassName('locale-switcher-banner').length > 0) {
+		document.getElementsByClassName('locale-switcher-banner')[0].remove();
+	}
 
-  /* Get the Button Path */
-  let buttonPath;
-  if (preferences.visual.emulateMacOS === "right") {
-    buttonPath = '//*[@id="web-main"]/div[4]/div/div[3]/div[3]/button';
-  } else {
-    buttonPath = '//*[@id="web-main"]/div[3]/div/div[3]/div[3]/button';
-  }
+	/* Get the Button Path */
+	let buttonPath;
+	if (preferences.visual.emulateMacOS === 'right') {
+		buttonPath = '//*[@id="web-main"]/div[4]/div/div[3]/div[3]/button';
+	} else {
+		buttonPath = '//*[@id="web-main"]/div[3]/div/div[3]/div[3]/button';
+	}
 
-  /* Create the Settings / Discord buttons */
-  if (GetXPath(buttonPath)) {
-    GetXPath(buttonPath).addEventListener("click", function () {
-      if (document.querySelector(".context-menu__option--app-settings")) {
-        console.log("[settingsInit] Preventing second button.");
-        return;
-      }
+	/* Create the Settings / Discord buttons */
+	if (GetXPath(buttonPath)) {
+		GetXPath(buttonPath).addEventListener('click', function () {
+			if (document.querySelector('.context-menu__option--app-settings')) {
+				console.log('[settingsInit] Preventing second button.');
+				return;
+			}
 
-      const ul = GetXPath("/html/body/div[6]/ul");
+			const ul = GetXPath('/html/body/div[6]/ul');
 
-      GetXPath("/html/body/div[6]/ul/li[2]").remove();
-      const amSettings = document.createElement("li");
-      amSettings.innerHTML = `
+			GetXPath('/html/body/div[6]/ul/li[2]').remove();
+			const amSettings = document.createElement('li');
+			amSettings.innerHTML = `
                     <span class="context-menu__option-text" tabindex="0" role="menuitem">
                         <span class="context-menu__option-text-clamp">Account Settings</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" stroke="#212b36" stroke-width="2" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" xml:space="preserve" class="context-menu__option-icon">
@@ -47,15 +47,15 @@ try {
                         </svg>
                     </span>
                 `;
-      amSettings.classList.add("context-menu__option--am-settings");
-      amSettings.classList.add("context-menu__option");
-      amSettings.onclick = function () {
-        window.open(`https://music.apple.com/account/settings`);
-      };
-      ul.insertBefore(amSettings, ul.childNodes[8]);
+			amSettings.classList.add('context-menu__option--am-settings');
+			amSettings.classList.add('context-menu__option');
+			amSettings.onclick = function () {
+				window.open(`https://music.apple.com/account/settings`);
+			};
+			ul.insertBefore(amSettings, ul.childNodes[8]);
 
-      const amPreferences = document.createElement("li");
-      amPreferences.innerHTML = `
+			const amPreferences = document.createElement('li');
+			amPreferences.innerHTML = `
                     <span class="context-menu__option-text" tabindex="0" role="menuitem">
                         <span class="context-menu__option-text-clamp">Preferences</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 16 16" xml:space="preserve" class="context-menu__option-icon">
@@ -64,15 +64,15 @@ try {
                     </span>
                 `;
 
-      amPreferences.classList.add("context-menu__option--app-settings");
-      amPreferences.classList.add("context-menu__option");
-      amPreferences.onclick = function () {
-        ipcRenderer.send("showPreferences");
-      };
-      ul.insertBefore(amPreferences, ul.childNodes[9]);
+			amPreferences.classList.add('context-menu__option--app-settings');
+			amPreferences.classList.add('context-menu__option');
+			amPreferences.onclick = function () {
+				ipcRenderer.send('showPreferences');
+			};
+			ul.insertBefore(amPreferences, ul.childNodes[9]);
 
-      const amDiscord = document.createElement("li");
-      amDiscord.innerHTML = `
+			const amDiscord = document.createElement('li');
+			amDiscord.innerHTML = `
                     <span class="context-menu__option-text" tabindex="0" role="menuitem">
                         <span class="context-menu__option-text-clamp">Discord</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 28 20" xml:space="preserve" class="context-menu__option-icon">
@@ -80,74 +80,74 @@ try {
                         </svg>
                     </span>
                 `;
-      amDiscord.classList.add("context-menu__option--am-discord");
-      amDiscord.classList.add("context-menu__option");
-      amDiscord.onclick = function () {
-        window.open(`https://discord.gg/CezHYdXHEM`);
-      };
-      ul.insertBefore(amDiscord, ul.childNodes[4]);
-    });
-  }
+			amDiscord.classList.add('context-menu__option--am-discord');
+			amDiscord.classList.add('context-menu__option');
+			amDiscord.onclick = function () {
+				window.open(`https://discord.gg/CezHYdXHEM`);
+			};
+			ul.insertBefore(amDiscord, ul.childNodes[4]);
+		});
+	}
 
-  /* Scroll Volume */
-  if (
-    document.querySelector(".web-chrome-playback-lcd__volume") &&
-    typeof volumeChange === "undefined"
-  ) {
-    document
-      .getElementsByClassName("web-chrome-playback-lcd__volume")[0]
-      .addEventListener("wheel", volumeChange);
+	/* Scroll Volume */
+	if (
+		document.querySelector('.web-chrome-playback-lcd__volume') &&
+		typeof volumeChange === 'undefined'
+	) {
+		document
+			.getElementsByClassName('web-chrome-playback-lcd__volume')[0]
+			.addEventListener('wheel', volumeChange);
 
-    function volumeChange(event) {
-      console.log(event);
-      if (checkScrollDirectionIsUp(event)) {
-        if (MusicKit.getInstance().volume <= 1) {
-          if (MusicKit.getInstance().volume + 0.05 > 1) {
-            MusicKit.getInstance().volume = 1;
-          } else {
-            MusicKit.getInstance().volume =
-              MusicKit.getInstance().volume + 0.05;
-          }
-        }
-      } else {
-        if (MusicKit.getInstance().volume >= 0) {
-          if (MusicKit.getInstance().volume - 0.05 < 0) {
-            MusicKit.getInstance().volume = 0;
-          } else {
-            MusicKit.getInstance().volume =
-              MusicKit.getInstance().volume - 0.05;
-          }
-        }
-      }
-    }
+		function volumeChange(event) {
+			console.log(event);
+			if (checkScrollDirectionIsUp(event)) {
+				if (MusicKit.getInstance().volume <= 1) {
+					if (MusicKit.getInstance().volume + 0.05 > 1) {
+						MusicKit.getInstance().volume = 1;
+					} else {
+						MusicKit.getInstance().volume =
+							MusicKit.getInstance().volume + 0.05;
+					}
+				}
+			} else {
+				if (MusicKit.getInstance().volume >= 0) {
+					if (MusicKit.getInstance().volume - 0.05 < 0) {
+						MusicKit.getInstance().volume = 0;
+					} else {
+						MusicKit.getInstance().volume =
+							MusicKit.getInstance().volume - 0.05;
+					}
+				}
+			}
+		}
 
-    function checkScrollDirectionIsUp(event) {
-      if (event.wheelDelta) {
-        return event.wheelDelta > 0;
-      }
-      return event.deltaY < 0;
-    }
-  }
+		function checkScrollDirectionIsUp(event) {
+			if (event.wheelDelta) {
+				return event.wheelDelta > 0;
+			}
+			return event.deltaY < 0;
+		}
+	}
 
-  /* Audio Quality Selector */
-  if (preferences.general.audioQuality === "auto") {
-    console.log(
-      "[JS] AudioQuality set to auto, dynamically setting bitrate between 64 and 256."
-    );
-  } else if (preferences.general.audioQuality === "high") {
-    console.log("[JS] AudioQuality set to high, forcing bitrate to 256.");
-    MusicKit.PlaybackBitrate = 256;
-    MusicKit.getInstance().bitrate = 256;
-  } else if (preferences.general.audioQuality === "standard") {
-    console.log("[JS] AudioQuality set to standard, forcing bitrate to 64.");
-    MusicKit.PlaybackBitrate = 64;
-    MusicKit.getInstance().bitrate = 64;
-  }
+	/* Audio Quality Selector */
+	if (preferences.general.audioQuality === 'auto') {
+		console.log(
+			'[JS] AudioQuality set to auto, dynamically setting bitrate between 64 and 256.'
+		);
+	} else if (preferences.general.audioQuality === 'high') {
+		console.log('[JS] AudioQuality set to high, forcing bitrate to 256.');
+		MusicKit.PlaybackBitrate = 256;
+		MusicKit.getInstance().bitrate = 256;
+	} else if (preferences.general.audioQuality === 'standard') {
+		console.log('[JS] AudioQuality set to standard, forcing bitrate to 64.');
+		MusicKit.PlaybackBitrate = 64;
+		MusicKit.getInstance().bitrate = 64;
+	}
 
-  /* Incognito Mode */
-  if (preferences.general.incognitoMode.includes(true)) {
-    MusicKit.privateEnabled = true;
-  }
+	/* Incognito Mode */
+	if (preferences.general.incognitoMode.includes(true)) {
+		MusicKit.privateEnabled = true;
+	}
 } catch (e) {
-  console.error("[JS] Error while trying to apply custom.js", e);
+	console.error('[JS] Error while trying to apply custom.js', e);
 }
