@@ -61,7 +61,6 @@ module.exports = {
     }
 
     let ActivityObject = {
-      details: 'Apple Music',
       state: `by ${attributes.artistName}`,
       startTimestamp: attributes.startTime,
       endTimestamp: attributes.endTime,
