@@ -858,7 +858,7 @@ exports.SettingsMenuInit = function () {
             },
           ],
         },
-      }
+      },
     ],
     browserWindowOpts: {
       title: "Preferences",

@@ -33,9 +33,7 @@ function CreateWindow() {
     app.quit();
     return;
   } else {
-    console.log(
-      "[Apple-Music] [InstanceHandler] No existing instances found."
-    );
+    console.log("[Apple-Music] [InstanceHandler] No existing instances found.");
   }
 
   const {
@@ -43,7 +41,7 @@ function CreateWindow() {
   } = require("./resources/functions/CreateBrowserWindow");
   app.win = CreateBrowserWindow(); // Create the Browser Window
 
-  app.win.show()
+  app.win.show();
 
   const { LoadWebsite } = require("./resources/functions/load/LoadWebsite");
   LoadWebsite(); // Load the Website
@@ -63,9 +61,11 @@ function CreateWindow() {
   } = require("./resources/functions/handler/PlaybackStateHandler");
   playbackStateDidChange(); // IPCMain
 
-const {SetThumbarButtons} = require('./resources/functions/win/SetThumbarButtons')
-  SetThumbarButtons() // Set Inactive Thumbar Icons
-  
+  const {
+    SetThumbarButtons,
+  } = require("./resources/functions/win/SetThumbarButtons");
+  SetThumbarButtons(); // Set Inactive Thumbar Icons
+
   const {
     mediaItemStateDidChange,
   } = require("./resources/functions/handler/MediaStateHandler");

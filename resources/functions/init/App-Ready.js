@@ -39,7 +39,6 @@ exports.ApplicationReady = function () {
     });
   }
 
-
   // Mpris
   app.mpris = {
     active: false,
