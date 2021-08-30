@@ -61,6 +61,7 @@ module.exports = {
     }
 
     let ActivityObject = {
+      details: attributes.name,
       state: `by ${attributes.artistName}`,
       startTimestamp: attributes.startTime,
       endTimestamp: attributes.endTime,
