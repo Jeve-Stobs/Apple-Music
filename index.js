@@ -43,10 +43,7 @@ function CreateWindow() {
   } = require("./resources/functions/CreateBrowserWindow");
   app.win = CreateBrowserWindow(); // Create the Browser Window
 
-  const {
-    SetThumbarButtons,
-  } = require("./resources/functions/win/SetThumbarButtons");
-  SetThumbarButtons(); // Set Inactive Thumbar Icons
+  app.win.show()
 
   const { LoadWebsite } = require("./resources/functions/load/LoadWebsite");
   LoadWebsite(); // Load the Website
@@ -66,6 +63,9 @@ function CreateWindow() {
   } = require("./resources/functions/handler/PlaybackStateHandler");
   playbackStateDidChange(); // IPCMain
 
+const {SetThumbarButtons} = require('./resources/functions/win/SetThumbarButtons')
+  SetThumbarButtons() // Set Inactive Thumbar Icons
+  
   const {
     mediaItemStateDidChange,
   } = require("./resources/functions/handler/MediaStateHandler");
