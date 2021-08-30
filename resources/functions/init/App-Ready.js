@@ -67,5 +67,5 @@ exports.ApplicationReady = function () {
     connected: false,
   };
   app.discord.rpc = require("../media/discordrpc");
-  app.discord.rpc.connect("749317071145533440");
+  app.discord.rpc.connect("881700632791232522");
 };
