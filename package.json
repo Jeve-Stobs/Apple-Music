@@ -70,7 +70,7 @@
 			],
 			"category": "AudioVideo",
 			"icon": "./resources/icons/icon.icns",
-			"desktop": "./Apple-Music.desktop"
+			"desktop": "./apple-music.desktop"
 		},
 		"win": {
 			"target": [
