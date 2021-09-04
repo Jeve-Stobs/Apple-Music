@@ -1,7 +1,7 @@
 {
 	"name": "apple-music",
 	"productName": "Apple Music",
-	"version": "2.5.1",
+	"version": "2.5.3",
 	"description": "A free, lightweight, open source alternative to iTunes and other Apple Music applications based on Electron ",
 	"author": "Jeve Stobs <sam@jevestobs.dev> (https://jevestobs.dev)",
 	"scripts": {
